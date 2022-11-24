@@ -1,0 +1,45 @@
+{
+  "name": "vite-plugin-trpc",
+  "version": "0.1.0",
+  "description": "TRPC Plugin for Vite. Adds TRPC router to vite's dev server.",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "start": "npm run test:i",
+    "build": "rm -rf ./dist/ && rollup -c"
+  },
+  "husky": {
+    "pre-commit": "prettier src/* --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/null/vite-plugin-trpc"
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "peerDependencies": {},
+  "devDependencies": {
+    "@trpc/server": "^10.1.0",
+    "@types/node": "^18.11.9",
+    "prettier": "^2.8.0",
+    "rollup": "^3.4.0",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "typescript": "^4.9.3",
+    "vite": "^3.2.4"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "collectCoverageFrom": [
+      "src/*.{ts,tsx}"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/build/",
+      "/dist/"
+    ]
+  },
+  "files": [
+    "dist/"
+  ]
+}
